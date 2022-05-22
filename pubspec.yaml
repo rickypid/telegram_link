@@ -4,7 +4,7 @@ version: 0.0.2-pre
 repository: https://github.com/rickypid/telegram_link
 
 environment:
-  sdk: '>=2.15.1 <3.0.0'
+  sdk: '>=2.16.2 <3.0.0'
 
 # dependencies:
 #   path: ^1.8.0
