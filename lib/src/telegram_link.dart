@@ -10,7 +10,6 @@ class TelegramLink {
   TelegramLink({
     this.username,
     this.phoneNumber,
-    this.message,
   }) : assert(phoneNumber != null || username != null);
 
   /// Destination phone number.
@@ -29,15 +28,6 @@ class TelegramLink {
   /// least five characters long.
   final String? username;
 
-  /// The message to the user. (Unsupported!!!)
-  ///
-  /// Telegram will include your message in [message], and it will automatically
-  /// appear in the text field of a chat.
-  ///
-  /// [message] is encoded using percent-encoding to make it safe for literal use
-  /// as a URI component.
-  final String? message;
-
   /// Create a Telegram URL link.
   @override
   String toString() {
@@ -47,17 +37,8 @@ class TelegramLink {
   Uri getUri() {
     String path =
         phoneNumber != null ? phoneNumber!.replaceAll(' ', '') : username!;
-    if (message != null) {
-      return telegramUri(
-        path: path,
-        queryParameters: {
-          'text': Uri.encodeComponent(message!),
-        },
-      );
-    } else {
-      return telegramUri(
-        path: path,
-      );
-    }
+    return telegramUri(
+      path: path,
+    );
   }
 }
