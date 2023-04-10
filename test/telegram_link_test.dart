@@ -1,5 +1,8 @@
-import 'package:telegram_link/telegram_link.dart';
+// Package imports:
 import 'package:test/test.dart';
+
+// Project imports:
+import 'package:telegram_link/telegram_link.dart';
 
 const phoneNumber = '+39 12345678';
 const username = 'test_username';
